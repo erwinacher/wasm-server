@@ -1,0 +1,220 @@
+############################################
+# 🔐 ENV / SECRETS
+############################################
+.env
+.env.*
+*.env
+*.env.*
+*.local
+*.local.*
+*.secret
+*.secrets
+*.key
+*.pem
+*.cert
+*.p12
+*.keystore
+
+############################################
+# 🐍 PYTHON (FastAPI, Flask, Django, etc)
+############################################
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtualenvs
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# Packaging / builds
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+wheels/
+
+# Testing / coverage
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+.coverage*
+.pytest_cache/
+.mypy_cache/
+.hypothesis/
+
+############################################
+# 🟨 NODE / JS / TS / REACT / NEXT / SVELTE / VUE
+############################################
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Framework outputs
+dist/
+build/
+.cache/
+.parcel-cache/
+.rollup.cache/
+
+# Next.js
+.next/
+out/
+
+# Vite / SvelteKit
+.vite/
+.svelte-kit/
+
+############################################
+# 🦀 RUST / CARGO / AXUM
+############################################
+target/
+Cargo.lock
+*.rmeta
+*.rlib
+*.rs.bk
+rustfmt-backup/
+
+############################################
+# ⚙️ GO / JVM / C++
+############################################
+# Go
+bin/
+vendor/
+*.test
+
+# JVM
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+out/
+
+# C/C++
+*.o
+*.exe
+*.so
+*.dll
+*.out
+
+############################################
+# 🐳 DOCKER / PODMAN / CONTAINERIZATION
+############################################
+# Docker build context ignore expansions
+.dockerignore
+
+# Docker desktop / Podman settings
+.docker/
+podman/
+
+# BuildKit cache folders
+docker-cache/
+buildkit-cache/
+.cache/docker/
+
+# Persistent container data (dev only)
+docker-data/
+docker-volume/
+volumes/
+data/
+
+# Leftover container network configs
+docker-network/
+podman-network/
+
+# Docker Compose
+docker-compose.override.yml
+docker-compose.local.yml
+compose.override.yaml
+
+# Compose project files
+*.pid
+*.pid.lock
+
+# Local image layers
+layers/
+overlay/
+overlay2/
+image-cache/
+
+############################################
+# 🧭 KUBERNETES / HELM / K3D / KIND
+############################################
+# kube config overrides
+.kube/
+*.kubeconfig
+
+# Helm local chart build outputs
+charts/**/charts/
+charts/**/tmp/
+*.tgz
+helm-cache/
+helm-local/
+
+# Kind / k3d cluster metadata
+kind-data/
+k3d-data/
+k3s-data/
+.rancher/
+
+############################################
+# 📝 EDITOR / IDE JUNK
+############################################
+.vscode/
+.code-workspace
+.history/
+.idea/
+*.iml
+
+# Vim / Emacs
+*.swp
+*.swo
+*~
+\#*\#
+
+# Sublime
+*.sublime-project
+*.sublime-workspace
+
+############################################
+# 🖥 OS TRASH
+############################################
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*~
+
+############################################
+# 🎁 MISC JUNK
+############################################
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+*.orig
+*.rej
+
+# Logs
+*.log
+logs/
+log/
+debug.log
+
+# Cache
+tmp/
+temp/
+.cache/
+*.cache
