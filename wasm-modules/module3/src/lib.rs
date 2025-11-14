@@ -1,6 +1,6 @@
 #[unsafe(no_mangle)]
 pub extern "C" fn get_color() -> u32 {
-    0xFFFFFFFF
+    0x9400D3FF
 }
 
 static TEXT: &[u8] = b"Hello from module 3\0";

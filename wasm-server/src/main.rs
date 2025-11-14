@@ -10,6 +10,11 @@ use tokio_util::io::ReaderStream;
 use serde::Serialize;
 use std::path::PathBuf;
 use tokio::fs::File;
+use tower_http::cors::{CorsLayer, Any};
+use tower_http::trace::TraceLayer;
+use tracing_subscriber::EnvFilter;
+
+
 #[derive(Serialize)]
 struct HelloResponse {
     message: String,
@@ -46,25 +51,38 @@ async fn stream_wasm_handler(Path(file): Path<String>) -> impl IntoResponse {
 
 #[tokio::main]
 async fn main() {
+    let cors = CorsLayer::new()
+        .allow_origin(Any)
+        .allow_methods(Any)
+        .allow_headers(Any);
+
+    tracing_subscriber::fmt()
+        .with_env_filter(EnvFilter::from_default_env())
+        .init();
+
     let app = Router::new()
         .route("/wasm/{file}", get(stream_wasm_handler))
         .route("/graph.json", get(|| async {
             axum::Json(serde_json::json!({
-                "start": "node!",
+                "start": "node1",
                 "nodes": {
                     "node1": { "wasm": "/wasm/module1.wasm", "next": "node2" },
                     "node2": { "wasm": "/wasm/module2.wasm", "next": "node3" },
-                    "node3": { "wasm": "/wasm/module3.wasm", "next": null }
+                    "node3": { "wasm": "/wasm/module3.wasm", "next": "node4" },
+                    "node4": { "wasm": "/wasm/module4.wasm", "next": null }
                 }
             }))
         }))
-        .route("/hello", get(hello_handler));
+        .route("/hello", get(hello_handler))
+        .layer(cors)
+        .layer(TraceLayer::new_for_http());
 
     let url = "0.0.0.0:3002";
     let listener = tokio::net::TcpListener::bind(url)
         .await
         .expect("Failed to bind port");
-    println!("Axum server running at http://{}", url);
+    tracing::info!("Starting Axum server…");
+    tracing::info!("Axum server running at http://{}", url);
 
     axum::serve(listener, app)
         .await
