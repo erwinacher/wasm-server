@@ -209,7 +209,7 @@ etc.
 #### License
 
 MIT License
-(Feel free to adapt this.)
+
 
 #### Thanks
 
