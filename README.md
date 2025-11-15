@@ -1,3 +1,6 @@
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+
+
 ## WASM Graph Demo
 
 ### Modular WebAssembly execution with Rust (Axum) + Next.js
