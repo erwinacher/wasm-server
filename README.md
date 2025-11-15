@@ -24,16 +24,16 @@ Users can step through the graph manually, or auto-run the whole graph.
 
 #### Features
 
-✔ Three example WASM modules written in Rust  
-✔ Axum server that streams .wasm files incrementally  
-✔ Graph-based execution (node1 → node2 → node3)  
-✔ Next.js UI showing:  
-- Colored box updated by each module
-- Module text logs
-- “Step Manually” button
-- “Auto Run Graph” button
-✔ Minimal, easy-to-understand codebase
-✔ Great starting point for modular WASM architectures
+- Three example WASM modules written in Rust  
+- Axum server that streams .wasm files incrementally  
+- Graph-based execution (node1 → node2 → node3)  
+- Next.js UI showing:  
+   - Colored box updated by each module
+   - Module text logs
+   - “Step Manually” button
+   - “Auto Run Graph” button
+- Minimal, easy-to-understand codebase
+- Great starting point for modular WASM architectures
 
 ### Project structure
 
@@ -198,7 +198,7 @@ UI shows:
 
 etc.
 
-###' This project aims to show how WebAssembly modules can be:
+#### This project aims to show how WebAssembly modules can be:
 
 - Modular
 - Dynamic
